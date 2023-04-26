@@ -1,13 +1,21 @@
+MNIST dataset can be found at http://yann.lecun.com/exdb/mnist/
+
+Given code will work downloading from source and stashing it in a local folder
+
+
 Conceptually:
 -------------
 
-Your simplified function for a descriptive line separating two type of image
-classification 
+The convolution neural network is an ideal candidate for general image recognition tasks.
+Commonly used for images where each pixel of a given grid (for our purposes, a 28x28 image
+of handwritten numbers, with 784 total inputs, each with its own numerical value between 0 and 1
+which represents the grayscale value of the input, 0 for black, 1 for white).
+
+
 
 Error:
     Error value = (target value - output value)
     Correcting for error: (target + delta(target))x
-        -
 
 Learning Rate:
     - Modifiable value to parse the signal / noise ratio in numerous
