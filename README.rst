@@ -22,29 +22,33 @@ a clearer picture of the way these models do what they do.
 
 Starting out:
 =============
-
+Error is one of the core functionalities in ML models. Given target data (output we desire) and model output value
+(selected by the model), we can calculate the difference or distance between the current output and expected output. 
+This measurement is used as feedback which can adjust the way the model works on future runs. 
 
 Error:
     Error value = (target value - output value)
     Correcting for error: (target + delta(target))x
 
 Learning Rate:
-    - Modifiable value to parse the signal / noise ratio in numerous
+    Modifiable value to parse the signal / noise ratio in numerous
     iterative refinements
 
 Activation Function:
-    -
+    
 
 Weight:
-    -Each input signal has its associated weight which diminishes or amplifies
+    Each input signal has its associated weight which diminishes or amplifies
     the given inputs signal that travels to the other nodes
-    - Multiply each given weight by the output signal from the previous node,
+
+    Multiply each given weight by the output signal from the previous node,
     sum them, and use that value as the x value in the sigmoid function
 
 Matrices:
-    - In constrast to singular (scalar) values, matrix values (vectors) described
+    In constrast to singular (scalar) values, matrix values (vectors) described
     in this context form a 2d array between link weights and input / output values
-    - Having two input nodes...
+
+    Having two input nodes...
 
           Matrix 1          Matrix 2
         W 1,1 ; W 2,1        Input 1
@@ -58,12 +62,17 @@ Matrices:
         each node
 
 Hidden Layer:
-    - Any layer of nodes that is between the initial input and final output
+    Where the "deep" of deep learning introduces itself. With hidden layers
+    we have successive layers of representation that can further prune model output.
+
+
+    Any layer of nodes that is between the initial input and final output
     layer of nodes, used to further tune and moderate link weights and 
     the final signal
 
 Backpropogation:
-    - In order to modify link weights succefully in a way that does not
+    In order to modify link weights succefully in a way that does not
     overfit the error, proportional weight tuning via backpropogation is used
-    - Our earlier error function is used here, as we have the target (expected) data
+
+    Our earlier error function is used here, as we have the target (expected) data
     and the output signal 
