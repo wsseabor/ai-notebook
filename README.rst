@@ -4,13 +4,24 @@ Given code will work downloading from source and stashing it in a local folder
 
 
 Conceptually:
--------------
+=============
+With increasing amounts of buzz and ink spilled over the concept and practice of neural networks,
+deep learning, machine learning and artificial intelligence, this project aimed to try and demystify the "black box"
+nature of these concepts. At its' base, it breaks away from traditional ideas of programming strict rules for a 
+program to execute its' functional purpose, instead of providing rules, we prodive data and rules for interpolating
+that data, while the program fine tunes a probabilistic model for selecting an output.
+
 
 The convolution neural network is an ideal candidate for general image recognition tasks.
-Commonly used for images where each pixel of a given grid (for our purposes, a 28x28 image
+Commonly used for pixelated images in greyscale (for our purposes, a 28x28 image
 of handwritten numbers, with 784 total inputs, each with its own numerical value between 0 and 1
-which represents the grayscale value of the input, 0 for black, 1 for white).
+which represents the grayscale value of the input, 0 for black, 1 for white). From here on the parts of 
+what makes these models work will be discussed and investigated into how and why they work the way they do.
+Through this we can (hopefully) peel back the curtain and "look into" the black box of machine learning and gain 
+a clearer picture of the way these models do what they do.
 
+Starting out:
+=============
 
 
 Error:
