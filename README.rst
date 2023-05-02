@@ -1,6 +1,7 @@
 MNIST dataset can be found at http://yann.lecun.com/exdb/mnist/
 
-Given code will work downloading from source and stashing it in a local folder
+Given code will work downloading from source and stashing it in a local folder in the same
+master directory the code is in
 
 
 Conceptually:
@@ -22,6 +23,10 @@ a clearer picture of the way these models do what they do.
 
 Starting out:
 =============
+Our basic model is concerned with one of the ten different handwritten digits that can be used as possible candidate
+values for our output. Since each image is a 28 x 28 grid of greyscale pixels, our inputs will be exanded to that
+28 x 28 = 784, and our outputs will number ten, again for each possible digit chosen by the model. 
+
 Error is one of the core functionalities in ML models. Given target data (output we desire) and model output value
 (selected by the model), we can calculate the difference or distance between the current output and expected output. 
 This measurement is used as feedback which can adjust the way the model works on future runs. 
@@ -29,10 +34,6 @@ This measurement is used as feedback which can adjust the way the model works on
 Error:
     Error value = (target value - output value)
     Correcting for error: (target + delta(target))x
-
-Learning Rate:
-    Modifiable value to parse the signal / noise ratio in numerous
-    iterative refinements
 
 Activation Function:
     
@@ -43,6 +44,15 @@ Weight:
 
     Multiply each given weight by the output signal from the previous node,
     sum them, and use that value as the x value in the sigmoid function
+
+Learning rate determines the step size of the gradient descent in the loss function. 
+Gradient descent is an iterative process that finds local function minima. What is of interest here
+is analyzing the local function minima through the dependent variable (the error that is output) stacked against
+the independent variable (the link weights that will change over time).
+
+Learning Rate:
+    Modifiable value to parse the signal / noise ratio in numerous
+    iterative refinements
 
 Matrices:
     In constrast to singular (scalar) values, matrix values (vectors) described
