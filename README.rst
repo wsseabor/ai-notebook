@@ -25,7 +25,8 @@ Starting out:
 =============
 Our basic model is concerned with one of the ten different handwritten digits that can be used as possible candidate
 values for our output. Since each image is a 28 x 28 grid of greyscale pixels, our inputs will be exanded to that
-28 x 28 = 784, and our outputs will number ten, again for each possible digit chosen by the model. 
+28 x 28 = 784, and our outputs will number ten, again for each possible digit chosen by the model. We'll then use 
+these nodes and connect each and every one via a link with a given weight assigned to it. 
 
 Error is one of the core functionalities in ML models. Given target data (output we desire) and model output value
 (selected by the model), we can calculate the difference or distance between the current output and expected output. 
