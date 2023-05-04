@@ -66,15 +66,17 @@ Matrices:
     In constrast to singular (scalar) values, matrix values (vectors) described
     in this context form a 2d array between link weights and input / output values
 
+    In order for the entire network to function, vectors are used to multiply the matrix of link weights by the
+    matrix of output signals. This can be expressed as X = W * I, where W is the matrix of weights, I is the matrix
+    of inputs, and X is the resultant matrix of combined moderated signals into the next layer. We then apply each
+    element of the resulting matrix to the sigmoid activation function.
 
 Hidden Layer:
-    Where the "deep" of deep learning introduces itself. With hidden layers
-    we have successive layers of representation that can further prune model output.
+    Where the "deep" of deep learning introduces itself. With hidden layers we have successive layers of representation 
+    that can further prune model output.
 
-
-    Any layer of nodes that is between the initial input and final output
-    layer of nodes, used to further tune and moderate link weights and 
-    the final signal
+    Any layer of nodes that is between the initial input and final output layer of nodes, used to further tune and moderate 
+    link weights and the final signal
 
 Backpropogation:
     In order to modify link weights succefully in a way that does not
