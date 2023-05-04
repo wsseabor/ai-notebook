@@ -37,14 +37,22 @@ Error:
     Correcting for error: (target + delta(target))x
 
 Activation Function:
+    In order for an output to reach it's activation threshold and "fire", a given value must be reached for each node 
+    in question. If we were doing a simple binary classification, a classic step function can be used. However, for a 
+    multimodal classifier such as handwritten digits where fine tuning the model's error over the course of training
+    loops is a necessity, and here the step function is of little use as there is no error correction because backpropagating
+    error requires the function to differentiable. As the step function is non-differentiable at x = 0 its derivative is 0 elsewhere, 
+    this renders any attempt at error correction null. For our purposes a smooth logistic (or sigmoid) function is used. 
     
 
 Weight:
-    Each input signal has its associated weight which diminishes or amplifies
-    the given inputs signal that travels to the other nodes
+    Each input signal has its associated weight which diminishes or amplifies the given inputs signal that travels to the other nodes.
 
-    Multiply each given weight by the output signal from the previous node,
-    sum them, and use that value as the x value in the sigmoid function
+    Multiply each given weight by the output signal from the previous node, sum them, and use that value as the x value 
+    for the sigmoid function.
+
+    At first pass the weights are randomly assigned under a guassian distribution, and over time as training loops progress, they
+    are refined according to error correction and either diminished or amplified as discussed above. 
 
 Learning rate determines the step size of the gradient descent in the loss function. 
 Gradient descent is an iterative process that finds local function minima. What is of interest here
@@ -52,25 +60,12 @@ is analyzing the local function minima through the dependent variable (the error
 the independent variable (the link weights that will change over time).
 
 Learning Rate:
-    Modifiable value to parse the signal / noise ratio in numerous
-    iterative refinements
+    Modifiable value to parse the signal / noise ratio in numerous iterative refinements
 
 Matrices:
     In constrast to singular (scalar) values, matrix values (vectors) described
     in this context form a 2d array between link weights and input / output values
 
-    Having two input nodes...
-
-          Matrix 1          Matrix 2
-        W 1,1 ; W 2,1        Input 1
-        W 1,2 ; W 2,2        Input 2
-
-        Through matrix multiplication:
-        (Weight1,1 * Input 1) + (Weight 2,1 * Input 1)
-        (Weight1,2 * Input 2) + (Weight 2,2 * Input 2)
-
-        Will give us our x value for the sigmoid activation function for
-        each node
 
 Hidden Layer:
     Where the "deep" of deep learning introduces itself. With hidden layers
