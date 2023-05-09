@@ -70,6 +70,11 @@ Matrices:
     matrix of output signals. This can be expressed as X = W * I, where W is the matrix of weights, I is the matrix
     of inputs, and X is the resultant matrix of combined moderated signals into the next layer. We then apply each
     element of the resulting matrix to the sigmoid activation function.
+    
+    Matrices of this order are considered 2D tensors, which are just containers for numerical data, usually from 0D 
+    to 4D tensors, these range from scalar tensors of just one numerical data point, 1D tensors for a row of numerical 
+    data points, 2D tensors for matrices, &c... Dimensons of tensors can be readily viewed through the ndim function call.
+    
 
 Hidden Layer:
     Where the "deep" of deep learning introduces itself. With hidden layers we have successive layers of representation 
